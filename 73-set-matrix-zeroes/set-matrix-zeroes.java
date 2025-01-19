@@ -1,9 +1,11 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
         boolean fr=false,fc=false;
+        int m=matrix.length;
+        int n=matrix[0].length;
 
-        for(int i=0;i<matrix.length;i++){
-            for(int j=0;j<matrix[0].length;j++){
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
                 if(matrix[i][j]==0){
                     if(i==0){
                         fr=true;
@@ -16,20 +18,20 @@ class Solution {
                 }
             }
         }
-         for(int i=1;i<matrix.length;i++){
-                    for(int j=1;j<matrix[0].length;j++){
+         for(int i=1;i<m;i++){
+                    for(int j=1;j<n;j++){
                         if(matrix[i][0] == 0 || matrix[0][j] == 0){
                             matrix[i][j]=0;
                         }
                     }
                 }
          if(fr){
-            for(int j=0;j<matrix[0].length;j++){
+            for(int j=0;j<n;j++){
                 matrix[0][j]=0;
             }
          }
          if(fc){
-            for(int i=0;i<matrix.length;i++){
+            for(int i=0;i<m;i++){
                 matrix[i][0]=0;
             }
          }
